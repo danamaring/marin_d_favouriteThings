@@ -4,45 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Favourite Places</title>
 
     {{!-- CSS links --}}
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    {{!-- FONTS links --}}
+    <link rel="stylesheet" href="https://use.typekit.net/mrs6qim.css">
+
+    {{!-- favicon  --}}
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+
+    <title>My Favourite Places</title>
+
 </head>
 
-<body>
+<body id="bcg3">
 {{!-- HEADER --}}
     <header>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            {{!-- Replace this - description Batun --}}
+            {{ Description }}
         </p>
     </header>
 
 {{!-- MAIN --}}
     <main>
         <section>
-            <div>
+            <div class="info_section">
                 {{!-- fauna - Batun --}}
                 <div>
-                    <img src="images/macaw.png" alt="Macaw">
+                    <img  class="image" src="images/{{FaunaImg}}" alt="Macaw">
                 </div>
                 <div>
-                    <h1>Fauna</h1>
+                    <h1 class="title" >Fauna</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        {{ FaunaDescription }}
                     </p>
                 </div>
 
                 {{!-- flora - Batun --}}
                 <div>
-                    <h1>Flora</h1>
-                    <img src="images/lirio.png" alt="Lirio">
+                    <h1 class="title" >Flora</h1>
+                    <img  class="image" src="images/{{FloraImg}}" alt="Lirio">
                 </div>
                 <div>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut hic doloribus, nisi impedit dignissimos cupiditate suscipit totam aut.
+                        {{ FloraDescription }}
                     </p>
                 </div>
             </div>
@@ -51,8 +58,9 @@
 
 {{!-- FOOTER  --}}
     <footer>
+        <a class="error-home-places" href="/">Back Home!</a>
         <div>
-            <h3>Copyrights © Dana Marin</h3>
+            <h3 class="copyrights">Copyrights © Dana Marin</h3>
         </div>
     </footer>
 
