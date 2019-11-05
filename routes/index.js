@@ -14,6 +14,8 @@ router.get('/', (req, res) => {
 
         //console.log(result); // should see objects wrapped in an array
 
+        console.log(result)
+
         // render the home view with dynamic data
         res.render('home', { places: result });
 
@@ -22,9 +24,10 @@ router.get('/', (req, res) => {
 
 //dynamic stuff
 //this resolves to localhost:3000/id (whatever you put after the slash in the location bar)
-router.get('/:id', (req, res) => {
+router.get('/thing/:id', (req, res) => {
     console.log('hit a dynamic route!');
     console.log(req.params.id);
+
 
     let query = `SELECT * FROM tbl_content WHERE ID="${req.params.id}"`;
 
@@ -34,9 +37,13 @@ router.get('/:id', (req, res) => {
         console.log(result); // should see objects wrapped in an array
 
         // render the home view with dynamic data
-        //res.render('home', { people: result });
+        // fetch ID and open a new page
+        //test used to be here before the first backtip
+        res.render(`${req.params.id}`,{ data: result[0], layout: `${req.params.id}` });
 
     })
+
+    
 })
 
 module.exports = router;
